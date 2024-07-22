@@ -23,17 +23,17 @@ public class BookController2 {
 		
 	}
 
-	public boolean registerBook(String title, String author) {
+	public boolean registerBook(String bkTitle, String bkAuthor) {
 		// 기존 제목,저자 있으면 등록 안되게
 		try {
-			if(!book.checkBook(title, author)) {
+			if(!book.checkBook(bkTitle, bkAuthor)) {
 				// 책 등록!
-				book.registerBook(title, author);
+				book.registerBook(bkTitle, bkAuthor);
 				return true;
 				
 			}
 		} catch (Exception e) {
-			e.printStackTrace();
+			
 		}
 		
 		return false;

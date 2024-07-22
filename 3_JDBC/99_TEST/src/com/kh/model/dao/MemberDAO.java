@@ -91,6 +91,21 @@ public class MemberDAO {
 		return member;
 	}
 	
+	// 5. 회원 탈퇴
+			public int deleteMember(int memberNo) throws Exception {
+				Connection conn = connect();
+				PreparedStatement ps = conn.prepareStatement(p.getProperty("deleteMember"));
+				
+				ps.setInt(1, memberNo);
+				int result = ps.executeUpdate();
+				close(ps,conn);
+				
+				
+				return result;
+				
+				
+			}
+	
 	
 	
 }

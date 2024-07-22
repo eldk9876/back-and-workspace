@@ -69,7 +69,7 @@ public class BookDAO {
 	// 1. 전체 책 조회
 	public ArrayList<Book2> printBookAll() throws Exception{
 		Connection conn = connect();
-		PreparedStatement ps = conn.prepareStatement(p.getProperty("bookCheck"));
+		PreparedStatement ps = conn.prepareStatement(p.getProperty("printBookAll"));
 		
 		ResultSet rs = ps.executeQuery();
 		
@@ -93,12 +93,12 @@ public class BookDAO {
 	}
 	
 	// 책 확인 여부(title, author)
-	public boolean checkBook(String title, String author) throws Exception {
+	public boolean checkBook(String bkTitle, String bkAuthor) throws Exception {
 		Connection conn = connect();
 		PreparedStatement ps = conn.prepareStatement(p.getProperty("checkBook"));
 		
-		ps.setString(1, title);
-		ps.setString(2, author);
+		ps.setString(1, bkTitle);
+		ps.setString(2, bkAuthor);
 		ResultSet rs = ps.executeQuery();
 		
 		boolean check = rs.next();
@@ -109,13 +109,14 @@ public class BookDAO {
 	}
 	
 	// 2. 책 등록
-	public void registerBook(String title, String author) throws Exception {
+	public void registerBook(String bkTitle, String bkAuthor) throws Exception {
 		Connection conn = connect();
 		PreparedStatement ps = conn.prepareStatement(p.getProperty("registerBook"));
 		
-		ps.setString(1, title);
-		ps.setString(2, author);
+		ps.setString(1, bkTitle);
+		ps.setString(2, bkAuthor);
 		ps.executeQuery();
+		
 		close(ps, conn);
 		
 		

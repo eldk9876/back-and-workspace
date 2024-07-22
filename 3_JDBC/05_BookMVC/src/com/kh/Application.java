@@ -84,10 +84,10 @@ public class Application {
 		// 책 제목, 책 저자를 사용자한테 입력 받아
 		try {
 		System.out.print("책 제목 : ");
-		String title = sc.nextLine();
+		String bkTitle = sc.nextLine();
 		
 		System.out.print("책 저자 : ");
-		String author = sc.nextLine();
+		String bkAuthor = sc.nextLine();
 		// 기존 제목,저자 있으면 등록 안되게!
 		
 		
