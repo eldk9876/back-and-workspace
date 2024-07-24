@@ -1,39 +1,34 @@
-package com.kh.controller;
+package controller;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import model.DAO.ex.MemberDAO;
+import model.vo.ex.MemberEx;
+
 import java.io.IOException;
 import java.sql.SQLException;
-import java.util.ArrayList;
 
-import com.kh.model.dao.MemberDAO;
-import com.kh.model.vo.Member;
-
-@WebServlet("/view")
-public class View extends HttpServlet {
+@WebServlet("/resister")
+public class ResisterServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	
+
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// 1. DAO - showAllMember
+		String id = request.getParameter("id");
+		String password = request.getParameter("password");
+		String name = request.getParameter("name");
+		
 		MemberDAO dao = new MemberDAO();
-		ArrayList<Member> list = null;
 		try {
-			list = dao.showAllMember();
-			
+			dao.register(id,password,name);
 		} catch (SQLException e) {
+			
 			e.printStackTrace();
 		}
-		
-		// 2.바인딩 : list 전체
-		request.setAttribute("list", list);
-		
-		// 3. 네비게이션 : view.jsp
-		request.getRequestDispatcher("view.jsp").forward(request, response);
-		
+		response.sendRedirect("index.jsp");
 	}
-
+	
 }

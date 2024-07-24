@@ -9,6 +9,15 @@ pageEncoding="UTF-8"%>
     <title>Insert title here</title>
   </head>
   <body>
+  
+  <%-- search랑 매핑할 SearchServlet 생성
+			search.jsp 결과 보여주기 --%>
+	<h2>회원 조회</h2>
+	<form action="search">
+		검색할 회원 아이디를 입력해주세요<br>
+		<input type="text" name="id">
+		<input type="submit" value="조회">
+	</form>
 
     <h1>전체 리스트</h1>
     <table border="1">
@@ -19,7 +28,7 @@ pageEncoding="UTF-8"%>
       </tr>
       <%-- getAttribute로 리스트로 가지고 오시고 for문 활용! --%>
 			<% ArrayList<Member> list = (ArrayList<Member>)request.getAttribute("list"); 
-				for (Member m : list){
+				for(Member m : list){
 				%>
 					<tr>
 						<td><%=m.getId() %></td>
