@@ -6,6 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Properties;
 
 import model.vo.ex.MemberEx;
@@ -66,24 +67,27 @@ public class MemberDAO {
 				
 			}
 			
-			public String login(String id, String password) throws SQLException {
-
+			// 로그인
+			public MemberEx login(String id, String password) throws SQLException {
+				driver();
 		
 				
 				Connection conn = Connect();
-				PreparedStatement ps = conn.prepareStatement(p.getProperty("login"));
+				String query = "SELECT * FROM member WHERE id = ? AND password =?";
+				PreparedStatement ps = conn.prepareStatement(query);
 				ps.setString(1, id);
 				ps.setString(2, password);
 				
 
 				ResultSet rs = ps.executeQuery();
-				String name = null;
+				MemberEx member = null;
 				
 				if(rs.next()) {
-					name = rs.getString("name");
-					close(rs, ps, conn);
+					member = new MemberEx(id, password,rs.getString("name"));
+					
 				}
-				return name;
+				close(rs, ps, conn);
+				return member;
 			}
 			
 			
@@ -97,57 +101,44 @@ public class MemberDAO {
 				
 				ResultSet rs = ps.executeQuery();
 				MemberEx member = null;
-				if(rs.next()) member = new MemberEx(id,rs.getString("password"), rs.getString("name"));
+				
+				if(rs.next()) {
+					member = new MemberEx(id, rs.getString("password"),rs.getString("name"));
+					
+				}
+			
 				close(rs,ps,conn);
 				return member;
 			
-			
-			
-			
-			
-			
+			}
 				// 전체 회원 보기 
-				
-				public ArrayList<MemberEx> allMember() throws SQLException {
-					driver();
-					Connection conn = Connect();
-					String query = "SELECT * FROM member ";
-					PreparedStatement ps = conn.prepareStatement(query);
+			
+				public List<MemberEx> all() throws SQLException {
+				driver();
+				Connection conn = Connect();
+				String query = "SELECT * FROM member ";
+				PreparedStatement ps = conn.prepareStatement(query);
 					
-					ResultSet rs = ps.executeQuery();
+				ResultSet rs = ps.executeQuery();
 					
-					ArrayList<MemberEx> list = new ArrayList<>();
+				List<MemberEx> memberlist = new ArrayList<>();
 					 
-					while(rs.next()) {
-						list.add(new MemberEx(rs.getString("id"),
+				while(rs.next()) {
+				memberlist.add(new MemberEx(rs.getString("id"),
 											rs.getString("password"),
 											rs.getString("name")));
 						
 					}
 					close(rs,ps,conn);
-					return list;
+					return memberlist;
 					
 					
 				}	
 				
 				
-					
 
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
 		
-		
-}}
+
+
+
+			}

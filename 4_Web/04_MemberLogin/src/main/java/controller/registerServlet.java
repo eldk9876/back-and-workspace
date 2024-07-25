@@ -11,8 +11,8 @@ import model.vo.ex.MemberEx;
 import java.io.IOException;
 import java.sql.SQLException;
 
-@WebServlet("/resister")
-public class ResisterServlet extends HttpServlet {
+@WebServlet("/register")
+public class registerServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 

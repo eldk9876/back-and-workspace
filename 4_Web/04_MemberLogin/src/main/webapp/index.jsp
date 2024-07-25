@@ -1,3 +1,4 @@
+<%@page import="model.vo.ex.MemberEx"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -11,6 +12,11 @@
 		<h1>회원 관리 기능</h1>
 		
 		<ul>
+			<% MemberEx member = (MemberEx)session.getAttribute("member"); 
+			if(member == null){
+				
+				
+				%>
 			<!-- 로그인 되어 있지 않은 경우 -->>
 			<li><a href="/views/register.jsp">회원가입</a> </li>
 			<!-- 회원가입 : 아이디, 비밀번호, 이름 입력 받아서 
@@ -27,7 +33,7 @@
 						index.jsp로 이동
 						-->
 			
-						
+			<% } else { %>	
 			<!-- 로그인 된 경우 -->>
 			<li><a href="/views/search.jsp">회원검색</a> </li>
 			<!-- 회원검색 : 검색할 아이디 입력 받아서 
@@ -38,17 +44,14 @@
 				
 						-->
 			
-			<li><a href="/views/allMember.jsp">전체회원보기</a> </li>
+			<li><a href="/allMember">전체회원보기</a> </li>
 			<!-- 전체회원보기 : views/allMember.jsp에 리스트 출력	
 						-->
 			
-			<li><a href="/views/logout.jsp">로그아웃</a> </li>
-			<!-- 로그아웃 : 로그아웃 index.jsp로!
-						
-							
-						-->
-			
-			
+			<li><a href="/logout">로그아웃</a> </li>
+			<!-- 로그아웃 : 로그아웃 index.jsp로!-->
+				<% } %>		
+
 		</ul>
 		
 

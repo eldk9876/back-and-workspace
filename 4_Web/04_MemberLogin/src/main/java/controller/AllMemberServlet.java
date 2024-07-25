@@ -5,47 +5,30 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpSession;
 import model.DAO.ex.MemberDAO;
 import model.vo.ex.MemberEx;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.List;
 
-@WebServlet("/search")
-public class SearchServlet extends HttpServlet {
+@WebServlet("/allMember")
+public class AllMemberServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		
-		String id = request.getParameter("id"); 
-
-		
 		MemberDAO dao = new MemberDAO();
-		
-	
+		List<MemberEx> list;
 		try {
-			MemberEx member = dao.search(id);
+			list = dao.all();
 			
-			if(member != null) {
-				
-				request.setAttribute("member", member);
-				request.getRequestDispatcher("/views/search_ok.jsp").forward(request, response);
-
-					
-			} else {
-				response.sendRedirect("/views/search_fail.jsp");
-			}
+			request.setAttribute("list", list);
+			request.getRequestDispatcher("/views/allMember.jsp").forward(request, response);
 			
-			
-		//	request.getRequestDispatcher("index.jsp").forward(request, response);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		
-		
 		
 		
 	}

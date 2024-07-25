@@ -10,6 +10,7 @@ import model.DAO.ex.MemberDAO;
 import model.vo.ex.MemberEx;
 
 import java.io.IOException;
+import java.sql.SQLException;
 
 
 @WebServlet("/login")
@@ -27,16 +28,24 @@ public class LoginServlet extends HttpServlet {
 				
 				MemberDAO dao = new MemberDAO();
 				
-				MemberEx member = new MemberEx(id,password,"테스트");
+				MemberEx member;
+				try {
+					member = dao.login(id, password);
+					
+					// 바인딩 - Session
+					HttpSession session = request.getSession();
+
+					session.setAttribute("member", member); // 키, 값 순서
+					 
+					response.sendRedirect("index.jsp");
+					
+				//	request.getRequestDispatcher("index.jsp").forward(request, response);
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
 				
 			
-				HttpSession session = request.getSession();
 				
-				
-				session.setAttribute("info", member); // 키, 값 순서
-				 
-				
-				request.getRequestDispatcher("").forward(request, response);
 	}
 
 }

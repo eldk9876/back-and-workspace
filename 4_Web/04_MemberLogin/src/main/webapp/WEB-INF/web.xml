@@ -28,4 +28,24 @@
     <servlet-name>SearchServlet</servlet-name>
     <url-pattern>/SearchServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>AllMemberServlet</display-name>
+    <servlet-name>AllMemberServlet</servlet-name>
+    <servlet-class>controller.AllMemberServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AllMemberServlet</servlet-name>
+    <url-pattern>/AllMemberServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>LogoutSrevlet</display-name>
+    <servlet-name>LogoutSrevlet</servlet-name>
+    <servlet-class>controller.LogoutSrevlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LogoutSrevlet</servlet-name>
+    <url-pattern>/LogoutSrevlet</url-pattern>
+  </servlet-mapping>
 </web-app>
