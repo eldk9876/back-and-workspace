@@ -7,10 +7,11 @@
 <title>Insert title here</title>
 </head>
 <body>
-		<jsp:include page="header.jsp"/>
-		<form action="choose5_view.jsp">
-		숫자 : <input type="text" name="number">
-				<input type="submit" value="전송">
-		</form>
+		<h1>회원검색!</h1>
+		<from action = "/search">
+		검색할 회원 아이디 : <input type="text" name="id"><br>
+		<input type="submit" value="검색">
+		
+		</from>
 </body>
 </html>

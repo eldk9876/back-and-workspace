@@ -9,8 +9,8 @@
 <body>
 		<h2>1) 기존 방식</h2>
 		<%=request.getParameter("id") %>
-		<%String[] hobbyList = request.getParameterValues("hobby"); 
-			for(String hobby : hobbyList){
+		<%String[] hobbyList = request.getParameterValues("hobby");%> <br> 
+			<% for(String hobby : hobbyList){
 				
 		%>		
 			- <%= hobby %><br>			

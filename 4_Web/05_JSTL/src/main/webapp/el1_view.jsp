@@ -21,7 +21,7 @@
 		<p>session : ${sessionScope.result}</p>
 		<p>${result}</p>
 		<p>${result2}</p>
-		<%-- member.getId() -> member.id --%>
+	<%--	 member.getId() -> member.id --%>
 		
 		
 </body>
