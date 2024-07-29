@@ -18,7 +18,7 @@ SELECT * FROM video_like;
 
 -- 회원
 CREATE TABLE member(
-	id VARCHAR(20) PRIMARY KEY  AUTO_INCREMENT,
+	id VARCHAR(20) PRIMARY KEY AUTO_INCREMENT,
     password VARCHAR(20),
     email VARCHAR(50),
     phone VARCHAR(13)
