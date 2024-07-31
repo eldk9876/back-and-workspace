@@ -8,10 +8,18 @@ CREATE TABLE sign_up ( -- 회원가입
     age INT, -- 나이
     gender CHAR(1) -- 성별
 );
+-- 필요기능 아이디 잊어버렸을때 전화번호나 이메일로 코드 보내서 일치하면 찾을수 있게 
+-- 비밀번호 잊어버렸을때 아이디와 이메일을 입력해서 이메일로 코드 받은 후 받은 코드 사용하면 재설정 가능하게(임시 비밀번호발급도 가능)
+-- 비밀번호, 주소, 이메일 변경가능하게 만들기 
+
+
 CREATE TABLE main_category ( -- 유형대분류
     MC_code INT PRIMARY KEY auto_increment, -- 대분류코드 mc 메인카테고리 줄임말
     MC_name VARCHAR(50) -- 대분류이름
 );
+-- 대분류,소분류 분류별로 선택 가능하게(중복선택도 가능??위치는 중복설정 불가능하게) 
+
+
 CREATE TABLE sub_category  ( -- 유형소분류
     SC_code INT PRIMARY KEY auto_increment, -- 소분류코드
     SC_Name VARCHAR(50), -- 소분류이름
@@ -41,6 +49,10 @@ CREATE TABLE mypage ( -- 마이페이지
     preferred_meeting_type VARCHAR(100), -- 유저 선호만남유형
     FOREIGN KEY (id) REFERENCES sign_up (id) -- 외래키 지정
 );
+
+-- 프로필 사진,관심사,자기소개,특이사항,선호지역,선호만남유형 변경 가능하게(선호지역과 손호 만남은 중복가능하게?? ) 
+
+
 CREATE TABLE clubs (
     club_code INT PRIMARY KEY auto_increment, -- 클럽코드
     club_Name VARCHAR(100), -- 클럽이름
