@@ -1,0 +1,33 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+		<a href="list">게시판 글 목록</a>
+
+		<h2>File Upload Test</h2>
+		<form action="/upload" method="post" enctype="multipart/form-data">
+		<input type="file" name="file"><br>
+		<input type="submit" value="파일업로드"/>
+		
+		
+		</form>
+
+
+		<h2>Mulit File Upload Test</h2>
+		<form action="/multiPuload" method="post" enctype="multipart/form-data">
+		<input type="file" name="file" multiple accept="image/*"><br>
+		<input type="submit" value="파일업로드"/>
+		
+		
+		</form>
+
+
+
+</body>
+</html>

@@ -1,6 +1,6 @@
-package com.kh.example.practice3.model;
+package com.kh.example.practice3.test.model;
 
-public class Employee extends Object {
+public class Practice3Employee extends Object {
 
 	private int empNo;
 	private String name;
@@ -10,10 +10,10 @@ public class Employee extends Object {
 	private int salary;
 	private double bonus;
 	
-	public Employee() {
+	public Practice3Employee() {
 	}
 	
-	public Employee(int empNo, String name, char gender, String phone, String dept, int salary, double bonus) {
+	public Practice3Employee(int empNo, String name, char gender, String phone, String dept, int salary, double bonus) {
 		this.empNo = empNo;
 		this.name = name;
 		this.gender = gender;

@@ -19,6 +19,7 @@ header {
   display: flex;
   justify-content: space-between;
   height: 60px;
+  z-index: 1;
 }
 .header-start {
   display: flex;
@@ -89,7 +90,8 @@ main nav {
   display: flex;
   padding-left: 15px;
   align-items: center;
-  background-color: white;
+  background: white;
+  z-index: 1;
 }
 
 main nav a {
@@ -144,4 +146,59 @@ main section {
   .header-center input {
     width: 90%;
   }
+}
+/*section - video */
+section{
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.video-card {
+  width: 350px;
+  border-radius: 10px;
+  cursor: pointer;
+  margin: 5px;
+}
+
+
+.video-card:hover .video-main img {
+  display: none;
+}
+
+.video-main {
+  position: relative;
+}
+
+.video-main video,
+.video-main img {
+  width: 100%;
+  position: absolute;
+}
+
+.video-main img {
+  border-radius: 10px;
+}
+
+.video-main video {
+  z-index: -1;
+}
+.video-info {
+  padding-top: 200px;
+  display: flex;
+  line-height: 1.2;
+}
+.video-info img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+.video-info h2 {
+  font-weight: bold;
+}
+
+.video-info p {
+  font-size: 0.9rem;
+  color: #555;
 }

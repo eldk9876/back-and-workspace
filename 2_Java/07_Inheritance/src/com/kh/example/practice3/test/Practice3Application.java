@@ -1,4 +1,4 @@
-package com.kh.example.practice3;
+package com.kh.example.practice3.test;
 
 import java.util.Scanner;
 
@@ -6,7 +6,7 @@ import com.kh.example.practice3.controller.EmployeeController;
 import com.kh.example.practice3.model.Employee;
 // import com.kh.inheritance.child.SmertPhone;
 
-public class Application {
+public class Practice3Application {
 	
 	Scanner sc = new Scanner(System.in);
 	Employee viewEmployee = new Employee();
@@ -14,7 +14,7 @@ public class Application {
 	
 	public static void main(String[] args) {
 		
-		Application a = new Application();
+		Practice3Application a = new Practice3Application();
 		a.printEmp();
 		
 

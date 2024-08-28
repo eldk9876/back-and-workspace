@@ -34,11 +34,6 @@ SELECT * FROM img;
 
 
 
-
-
-
-
-
 CREATE TABLE sign_up ( -- 회원가입
     id VARCHAR(50) PRIMARY KEY, -- 아이디
     pwd VARCHAR(255) NOT NULL, -- 비밀번호
@@ -221,3 +216,9 @@ ALTER TABLE img ADD  FOREIGN KEY (main_code) REFERENCES main(main_code);
 
 SELECT *
 FROM member;
+
+SELECT * 
+FROM membership
+JOIN membership_user_list USING(membership_code);
+
+-- JOIN channel using(membership_code);
