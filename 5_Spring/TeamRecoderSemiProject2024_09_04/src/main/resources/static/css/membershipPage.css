@@ -1,0 +1,256 @@
+#main-container{
+	display:flex;
+	justify-content: center;
+}
+
+#container {
+  width: 100%;
+  max-width: 1280px;
+ 
+  background: #f4f4f4;
+
+  border-radius: 12px;
+ 
+  display: flex;
+ 
+  align-items: center;
+  flex-direction: column;
+  margin-top:80px;
+    
+
+}
+
+#container-top {
+  display: flex;
+  flex-direction: column;
+  background-color: #fefefe;
+  border-radius: 16px;
+  align-items: center;
+  position: relative;
+  bottom: 60px;
+  width: 90%;
+  padding: 10px;
+}
+#hostImg {
+  position: relative;
+  bottom: 40px;
+}
+
+#hostName {
+  position: relative;
+  bottom: 40px;
+}
+#membershipTitle {
+  position: relative;
+  bottom: 30px;
+}
+
+#membershipTitle > h1 {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+#info-container {
+  width: 100%;
+  padding: 20px;
+}
+
+
+#mainImg {
+  width: 100%;
+  height: auto;
+  
+ 
+}
+#info-container {
+  line-height: 2;
+}
+#info-container > p > img {
+  max-width: 90%;
+}
+
+
+
+#hostInfo {
+  display: flex;
+  flex-direction: row;
+}
+#hostInfo-img {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#middle-container-top {
+  margin-bottom: 20px;
+}
+
+#middle-container {
+  width: 100%;
+  padding: 20px;
+}
+
+#name-and-info {
+  margin-left: 20px;
+}
+
+#hostInfo-name {
+  margin-bottom: 10px;
+}
+
+#together > p {
+  margin-top: 20px;
+}
+#imageContainer {
+  margin-top: 20px;
+}
+
+.locTyBox {
+  width: 100%;
+  padding: 20px;
+}
+
+
+#option {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.allmemberImg {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+
+#accordionExample {
+  width: 450px;
+ position: fixed;
+    left: 0px;
+    z-index: 99;
+    margin-top:80px;
+
+}
+
+.accordion-button collapsed{
+	
+	background-color: #14213d !important;
+    color: white !important;
+    font-weight: bold !important;
+	
+}
+.accordion-collapse {
+  overflow: auto; 
+}
+
+.accordion-body {
+  max-height: 1000px; 
+}
+
+.memberTable {
+  border: 1px solid;
+  
+  padding: 20px;
+  border-radius: 20px;
+  margin-bottom: 10px;
+}
+.memberTable ui{
+	
+	display: flex;
+   
+    flex-direction: column;
+}
+.member-grade {
+  width: 50px;
+  text-align: center;
+  font-weight: bold;
+  
+}
+
+.member-grade span {
+  color: rgb(252, 177, 3);
+  font-size: 32px;
+  
+}
+
+.member-img-info-hobby-location {
+  display: flex;
+}
+.member-info {
+  color: gray;
+  margin-bottom: 10px;
+}
+
+.member-hobby-location{
+	
+	display: flex;
+    justify-content: center;
+    align-items: center;
+	
+}
+.member-info-hobby-location {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.member-hobby-location {
+  border: 1px solid black;
+  border-radius: 20px;
+  width: 134px;
+  height: 28px;
+  text-align: center;
+  background: beige;
+  font-weight: bold;
+}
+
+.nickname-age-fm-manner {
+  display: flex;
+}
+.nickname-age-fm {
+  width: 90px;
+ 
+}
+.nickname {
+  font-weight: bold;
+}
+.age-fm {
+  font-size: 32px;
+  display: flex;
+  justify-content: space-around;
+}
+.manner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.manner > p {
+  margin: 20px;
+}
+#man {
+  color: blue;
+}
+#femail {
+  color: pink;
+}
+
+
+
+
+
+
+.accordion-button:not(.collapsed) {
+    background: #fca311 ; /* 펼쳐졌을 때 배경색 */
+    color: #ffffff; /* 텍스트 색상 */
+}
+
+
+.accordion-button.collapsed {
+    background: #14213d; /* 닫혔을 때 배경색 */
+    color: #ffffff; /* 텍스트 색상 */
+}
+
+
+

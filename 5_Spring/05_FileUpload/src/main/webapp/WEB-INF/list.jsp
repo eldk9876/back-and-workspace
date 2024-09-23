@@ -37,7 +37,7 @@
 		<tr>
 		<td>${status.count}</td>
 		<td><a href="/view?no=${i.no}">${i.title}</a></td>
-		<td><fmt:formatDate value="${i.formatDate}" pattern="yyy-MM-dd HH:mm:ss"/> </td>
+		<td><fmt:formatDate value="${i.formatDate}" pattern="yyyy-MM-dd HH:mm:ss"/> </td>
 		<td>${i.content} </td>	
 		<td>${i.url} </td>
 		</tr>

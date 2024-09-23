@@ -1,0 +1,176 @@
+
+body {
+
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+
+}
+
+.main_header {
+  background-color:#ADD8E6;
+  position: fixed;
+  width: 30%;
+  height: 80px;
+  z-index: 1000;
+}
+
+.container {
+  width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+}
+
+/**/
+#div1{
+	margin-top:10%;
+	display:flex;
+	text-align:center;
+	justify-content:center;
+	align-items:center;
+	background-color: silver;
+	flex-direction:column;
+	
+}
+.bar{
+	width: 50%;
+	margin-top:1%;
+	padding-right: 0.5rem;
+	
+}
+
+placeholder{
+	text-align: center;
+	align-items: center;
+}
+
+
+input[type="text"],
+input[type="number"],
+input[type="file"],
+textarea {
+  width: 80%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+
+#file{
+	background-color: white;
+}
+
+/*지역 유형 창*/ 
+select { 
+	display: block;
+	width: 200px;
+	padding: 10px;
+	margin: 10px 0;
+	border: 2px solid #333;
+	border-radius: 5px;
+	background-color: #f0f0f0;
+
+}
+/*지역부분*/
+#location{
+	margin-top: 1.5%;
+	margin-right: 2%;
+	background-color: olive;
+}
+
+
+
+
+#locationLaNameMem{
+	 width: 15%;
+	 margin-right:10px;
+  padding: 10px;
+}
+
+
+#locationSNameMem{
+	
+	 width: 15%;
+  padding: 10px;
+}
+
+
+.pt{
+	text-align: center;
+	background-color: blue;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+#test1{
+	display:flex;
+	text-align:center;
+	align-content:center;
+	padding-top:6.5px;
+	width: 98.5%;
+	border: 2px solid;
+	overflow:auto; /* 텍스트가 넘칠 경우 스크롤이 생기도록 설정 */
+	white-space:nowrap; /* 텍스트가 줄 바꿈 없이 가로로 표시되도록 설정 */
+
+
+	
+}
+
+button,
+input[type="submit"], #toIndex {
+  padding: 10px 15px;
+  
+  background-color: white;
+  color:  black;
+  border: 1px solid;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+
+.ltadd{
+	
+	background-color: orange;
+	display: flex;
+	
+}
+
+.select {
+	border: 1px solid;
+	text-align: center;
+	writing-mode: horizontal-tb;
+	
+}
+
+
+
+
+.locationt1{
+	background-color: teal;
+	display: flex;
+}
+
+.insert:hover {
+	background-color: #218838;
+	
+}
+
+.cancel:hover{
+	background-color: red;
+}
+
+#toIndex:hover {
+	background-color: red;
+}
+
+
+
+/*영민- 화살표 숨기기 */
+input[type="number"]::-webkit-inner-spin-button,  /*Chrome과 Safari에서 위쪽 화살표*/ 
+input[type="number"]::-webkit-outer-spin-button { /*Chrome과 Safari에서 아래쪽 화살표*/
+appearance: none; /* Chrome, Safari */ /*기본 스타일을 제거(화살표 버튼을 숨기고 기본적인 텍스트 입력 필드로 만들어 준다)*/
+margin: 0; /* 마진 제거 */
+}
+
