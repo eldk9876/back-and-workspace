@@ -100,7 +100,7 @@ VALUES('http://192.168.10.51:8082/video/day6.mp4',
 		'http://192.168.10.51:8082/thumbnail/day6.webp ',
 		'DAY6의 킬링보이스를 라이브로! ',
         '데이식스의 쇼에 오신걸 환영합니다 ','3
-');
+bank');
         
         
 SELECT * FROM video;
